@@ -14,7 +14,7 @@ from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain import HuggingFaceHub
 
 
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+#os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
 # Set up memory
