@@ -23,7 +23,7 @@ msgs = StreamlitChatMessageHistory(key="langchain_messages")
 st.set_page_config(page_title="Secretary agenda", page_icon="📖")
 st.title("📖 Secretary agenda")
 
-repo_id = "tiiuae/falcon-40b"
+repo_id = "Salesforce/xgen-7b-8k-base"
 
 llm = HuggingFaceHub(
     repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64}
