@@ -3,4 +3,3 @@ streamlit
 langchain_experimental
 openai
 mysql-connector-python
-huggingface_hub
