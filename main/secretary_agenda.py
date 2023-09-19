@@ -10,8 +10,7 @@ import streamlit as st
 from langchain.sql_database import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
-#from langchain.chat_models import ChatOpenAI
-from langchain import HuggingFaceHub
+from langchain.chat_models import ChatOpenAI
 
 
 #os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
@@ -23,13 +22,7 @@ msgs = StreamlitChatMessageHistory(key="langchain_messages")
 st.set_page_config(page_title="Secretary agenda", page_icon="📖")
 st.title("📖 Secretary agenda")
 
-repo_id = "Salesforce/xgen-7b-8k-base"
-
-llm = HuggingFaceHub(
-    repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64}
-)
-
-#llm= ChatOpenAI(temperature=0, model="gpt-4-0613")
+llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", temperature=0.2)
 
 memory = ConversationBufferMemory(memory_key="chat_history",chat_memory=msgs)
 readonlymemory = ReadOnlySharedMemory(memory=memory)
